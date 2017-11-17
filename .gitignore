@@ -1,0 +1,5 @@
+.DS_Store
+hw2/venv
+hw3/venv
+hw2/*.pyc
+hw3/*.pyc

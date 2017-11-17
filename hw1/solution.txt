@@ -1,0 +1,3 @@
+Percent >= 97: 0.989980656799
+Most occurance: TS129 1453
+Average percent: 98.462592362

@@ -1,0 +1,22 @@
+BONUS SOLUTIONS
+
+files:
+reg1.fna - FASTA file for region 1
+reg4.fna - FASTA file for region 4
+100-no-gaps.fna - FASTA file for all 100 sequences with no gaps
+
+How to get these Files:
+
+in main.py
+
+in the bottom. Comment out main() and uncomment bonus() and run python main.py This will generate all the FASTA files
+
+
+Discussion:
+
+the variable region 4 seems to be closest to the tree for all 16s tree
+I used my hw3 program to generate the newick files and then use iTol to visualize it
+
+I expected region 4 to be closest because it seemed to be a lot longer than region 1. I didnt really
+exprect region 1 to generate a very good tree. And I was correct. The tree that iTol generated only had a couple branches compared to
+the tree generated for the 16s and region 4. This makes sense because region 4 is longer than region 1 and encompasses more base pairs

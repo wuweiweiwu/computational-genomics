@@ -47,7 +47,12 @@ def calculate_variability(dictionary):
 
 
 '''
-get the variable regions x1, x2
+get the variable regions x1, x2 as a list
+They are determined by eye.
+
+Since there are a lot of local minima, I picked the locations
+where they seemed to be the lowest with respect to the neighboring regions
+and use matplotlib plots to estimate where the regions started and ended
 '''
 def get_variable_regions():
     variable_regions = [
@@ -151,6 +156,53 @@ def plot_variability(variability):
 
 
 '''
+write fasta file (bonus) given a dictionary of id->sequence
+'''
+def write_fasta_file(dictionary, filename):
+    with open(filename, 'w') as f:
+        for key, value in dictionary.items():
+            f.write('>' + key + '\n')
+            f.write(value + '\n')
+
+
+'''
+code to do the bonus stuff
+get region 1 and 4
+and write the fasta Files
+'''
+def bonus():
+    #select 100 sequences
+    dictionary = read_fasta_file('seqs.fna')
+    first100 = {key: dictionary[key] for key in dictionary.keys()[:100]}
+    first100_no_gaps = collections.defaultdict(str)
+    for i in xrange(7682):
+        # skip the gaps
+        gap_count = 0
+        for key, value in first100.items():
+            if value[i] == '-':
+                gap_count += 1
+        # if its all gaps then ignore it
+        if gap_count == 100:
+            continue
+        for key, value in first100.items():
+            first100_no_gaps[key] += value[i]
+    #get regions 1 and 4
+    regions = get_variable_regions()
+    reg1 = regions[0]
+    reg4 = regions[3]
+    reg1_dict = {}
+    reg4_dict = {}
+    for key, value in first100_no_gaps.items():
+        reg1_dict[key] = value[reg1[0]:reg1[1]+1]
+    write_fasta_file(reg1_dict, 'reg1.fna')
+    for key, value in first100_no_gaps.items():
+        reg4_dict[key] = value[reg4[0]:reg4[1]+1]
+    write_fasta_file(reg4_dict, 'reg4.fna')
+    write_fasta_file(first100_no_gaps, '100-no-gaps.fna')
+
+
+
+'''
 main function
 
 the first 4 lines calculate the variability
@@ -167,5 +219,10 @@ def main():
     plot_variability(y)
 
 
+
+'''
+comment out main() and uncomment bonus to run bonus code
+'''
 if __name__ == '__main__':
     main()
+    # bonus()

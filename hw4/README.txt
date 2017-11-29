@@ -31,16 +31,25 @@ Files:
 
 main.py - python code to run everything, every function is commented as specified in the assignment. Also discussed how the variable regions are found and marked
 requirements.txt - requirements for this code
-variability.txt - the file containing the identity values, one on each line
-regions.txt - the file containing the start and end position of each variable region (tab delimited)
-smoothing.png - plot showing the different smoothing factors
-smoothing_w_overlay.png - plot showing the different smoothing factors but also with the data points overlaid
-with_regions.png - plot showing the data points with the smoothing curve overlaid and also the variable regions drawn (IMPORTANT)
+
+solutions/
+
+  variability.txt - the file containing the identity values, one on each line
+  regions.txt - the file containing the start and end position of each variable region (tab delimited)
+
+images/
+
+  smoothing.png - plot showing the different smoothing factors
+  smoothing_w_overlay.png - plot showing the different smoothing factors but also with the data points overlaid
+  with_regions.png - plot showing the data points with the smoothing curve overlaid and also the variable regions drawn (IMPORTANT)
 
 
 BONUS files (IMPORTANT):
 
-reg1.fna - FASTA file for region 1
-reg4.fna - FASTA file for region 4
-100-no-gaps.fna - FASTA file for all 100 sequences with no gaps
 BONUS.txt - discussion about the bonus solution
+
+FASTA/
+
+  reg1.fna - FASTA file for region 1
+  reg4.fna - FASTA file for region 4
+  100-no-gaps.fna - FASTA file for all 100 sequences with no gaps

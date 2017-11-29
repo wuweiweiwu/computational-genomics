@@ -1,9 +1,12 @@
 BONUS SOLUTIONS
 
 files:
-reg1.fna - FASTA file for region 1
-reg4.fna - FASTA file for region 4
-100-no-gaps.fna - FASTA file for all 100 sequences with no gaps
+
+FASTA/
+
+  reg1.fna - FASTA file for region 1
+  reg4.fna - FASTA file for region 4
+  100-no-gaps.fna - FASTA file for all 100 sequences with no gaps
 
 How to get these Files:
 

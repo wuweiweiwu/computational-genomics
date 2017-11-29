@@ -76,7 +76,7 @@ one on each line \t delimited
 '''
 def write_regions():
     variable_regions = get_variable_regions()
-    with open('regions.txt', 'w') as f:
+    with open('solutions/regions.txt', 'w') as f:
         for x1, x2 in variable_regions:
             f.write(str(x1) + '\t' + str(x2) + '\n')
 
@@ -86,7 +86,7 @@ write the variability file -> variability.txt
 one on each line
 '''
 def write_variability(variabilities):
-    with open('variability.txt', 'w') as f:
+    with open('solutions/variability.txt', 'w') as f:
         for variability in variabilities:
             f.write(str(variability) + '\n')
 
@@ -97,7 +97,7 @@ do all the computations over and over again
 '''
 def read_variability():
     y = []
-    with open('variability.txt') as f:
+    with open('solutions/variability.txt') as f:
         content = f.read().splitlines()
     for index, line in enumerate(content):
         y.append(float(line))
@@ -172,7 +172,7 @@ and write the fasta Files
 '''
 def bonus():
     #select 100 sequences
-    dictionary = read_fasta_file('seqs.fna')
+    dictionary = read_fasta_file('FASTA/seqs.fna')
     first100 = {key: dictionary[key] for key in dictionary.keys()[:100]}
     first100_no_gaps = collections.defaultdict(str)
     for i in xrange(7682):
@@ -194,11 +194,11 @@ def bonus():
     reg4_dict = {}
     for key, value in first100_no_gaps.items():
         reg1_dict[key] = value[reg1[0]:reg1[1]+1]
-    write_fasta_file(reg1_dict, 'reg1.fna')
+    write_fasta_file(reg1_dict, 'FASTA/reg1.fna')
     for key, value in first100_no_gaps.items():
         reg4_dict[key] = value[reg4[0]:reg4[1]+1]
-    write_fasta_file(reg4_dict, 'reg4.fna')
-    write_fasta_file(first100_no_gaps, '100-no-gaps.fna')
+    write_fasta_file(reg4_dict, 'FASTA/reg4.fna')
+    write_fasta_file(first100_no_gaps, 'FASTA/100-no-gaps.fna')
 
 
 
@@ -211,7 +211,7 @@ and write the variability file as well as the regions file
 the last 2 lines read the values and plot the data
 '''
 def main():
-    # dictionary = read_fasta_file('seqs.fna')
+    # dictionary = read_fasta_file('FASTA/seqs.fna')
     # variabilities = calculate_variability(dictionary)
     # write_variability(variabilities)
     # write_regions()

@@ -60,7 +60,7 @@ protobuf==3.4.0
 ptyprocess==0.5.2
 PyAutoGUI==0.9.36
 pyglet==1.2.4
-Pygments==2.2.0
+Pygments==2.7.4
 PyMsgBox==1.0.6
 pyobjc==4.0
 pyobjc-core==4.0
